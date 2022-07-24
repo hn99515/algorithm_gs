@@ -87,7 +87,7 @@ for i in number_5:
     print(number_4 * int(i))
 print(number_4 *number_5_original)
 
-#
+#14
 print('         ,r\'\"7')
 print('r`-_   ,\'  ,/')
 print( '\\. \". L_r\'')
