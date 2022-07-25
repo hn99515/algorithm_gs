@@ -94,3 +94,89 @@ print( '\\. \". L_r\'')
 print('   `~\\/')
 print('      |')
 print('      |')
+
+#조건문
+#1
+compare_number = list(map(int, input().split()))
+if compare_number[0] > compare_number[1]:
+    print('>')
+elif compare_number[0] < compare_number[1]:
+    print('<')
+else:
+    print('==')
+
+#2
+score = int(input())
+if 100 >= score >= 90:
+    print('A')
+elif score >= 80:
+    print('B')
+elif score >= 70:
+    print('C')
+elif score >= 60:
+    print('D')
+else:
+    print('F')
+
+#3
+year_data = int(input())
+if year_data % 4 == 0 and year_data % 100 == 0:
+    print(1)
+elif year_data % 400 ==0:
+    print(1)
+else:
+    print(0)
+
+#4
+x = int(input())
+y = int(input())
+if x > 0:
+    if y > 0:
+        print(1)
+    else:
+        print(4)
+else:
+    if y > 0:
+        print(2)
+    else:
+        print(3)
+
+#5
+time = list(map(int, input().split()))
+if time[1] < 45:
+    time[0] -= 1
+    time[1] += 15
+    if time[0] < 0:
+        time[0] += 24
+print(time[0], time[1])
+
+#6
+time1 = list(map(int, input().split()))
+add_time = int(input())
+add_min = time1[1] + add_time
+
+
+if add_min < 60:
+    time1[1] = add_min
+if add_min >= 60:
+    time1[1] = add_min % 60
+    if add_hour >= 24:
+        time1[0] = time1[0] + add_min//60 - 24
+    else:
+        time1[0] = time1[0] + add_min//60
+        
+print(time1[0], time1[1])
+
+#7(unsloved)
+number6 = list(map(int, input().split()))
+if number[0] = number[1] == number[2]:
+    print(10000 + (number[0] * 1000)
+elif number[0] != number[1] != number[2]:
+    print(max(number6) * 100)
+else:
+    if number6[0] == number6[1]:
+        print(1000 + number6[0] * 100)
+    elif number6[0] == number6[1]:
+        print(1000 + number6[0] * 100)
+    elif number6[1] == number6[2]:
+        print(1000 + number6[1] * 100)
