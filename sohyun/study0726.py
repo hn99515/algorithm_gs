@@ -168,15 +168,14 @@ if add_min >= 60:
 print(time1[0], time1[1])
 
 #7(unsloved)
-number6 = list(map(int, input().split()))
-if number[0] = number[1] == number[2]:
-    print(10000 + (number[0] * 1000)
-elif number[0] != number[1] != number[2]:
-    print(max(number6) * 100)
-else:
-    if number6[0] == number6[1]:
-        print(1000 + number6[0] * 100)
-    elif number6[0] == number6[1]:
-        print(1000 + number6[0] * 100)
-    elif number6[1] == number6[2]:
-        print(1000 + number6[1] * 100)
+a = list(map(int, input().split()))
+for i in range(1,7):
+    if a.count(i) == 3:
+        print(10000 + i * 1000)
+    elif a.count(i) == 2:
+        print(1000 + i * 100)
+    elif a.count(i) <= 1:
+        if i == 6:
+            print(max(a) * 100)
+        else:
+            continue
