@@ -24,7 +24,7 @@
 
 * **commit 메세지 - [출처] 문제이름 / 난이도 / 걸린시간(분)**
 * 예시
-  * `git commit -m [SWEA] Hello World / D1 / 1분`
+  * `git commit -m [BOJ] 21문제 / 1분`
 * 플랫폼별 출처 작성법
   * 백준 = [BOJ]
   * 프로그래머스 = [PGS]
