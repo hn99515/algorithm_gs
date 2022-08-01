@@ -9,7 +9,7 @@ for i in range(C):                           # 개수만큼 순회
 
     n = scores[0]                            # 총 인원 = 0번째 자리
     score = sum(scores[1:])                  # 총점수 = 1번째 자리 ~ 끝까지
-    avg = score / n                          # 평균
+    avg = score / n                          
 
     cnt = 0                                  # 평균을 넘는 인원 수를 세는 변수
     for j in scores[1:]:                     # 점수만 순회
