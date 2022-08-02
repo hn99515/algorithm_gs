@@ -3,9 +3,12 @@ text = input()
 
 
 
-cnt = 0
+
 for char in changed:
     if char in text:
-        cnt +1
-        text = text.replace(char,'')
-print(cnt)
+      
+        text = text.replace(char,'_')   # ljes=njak -> _e__ak
+        
+
+
+print(len(text))    # 6
