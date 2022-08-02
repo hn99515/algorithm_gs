@@ -1,20 +1,11 @@
-def score_calcul(quiz):
-    num_O = list(quiz.split('X'))
-
-    num_O = list(filter(None, num_O))  # 빈 문자열 제거 (filter함수는 함수란에 None을 넣으면 False를 모두 제거하여 반환)
-
-
-    score = 0
-    for n_O in num_O:
-        for i in range(1, len(n_O)+1):
-            score += i
-
-    return score
-
-answer = []
 T = int(input())
-for t in range(T):
-    quiz = input()
-    answer.append(score_calcul(quiz))
-for s in answer:
-    print(s)
+
+for i in range(T):
+    case = input()  # 케이스 한줄
+    result = case.split('X')    # X를 경계로 나눔 ['OO', '' , 'O', '', 'OOO']
+    count_O = list(filter(len,result))      # len값이 0이 아닌 경우만 걸러서 count_0 리스트에 담음
+    cnt = 0
+    for cnt_O in count_O:       # ['OO' ,'O', 'OOO']
+        for x in range(1, len(cnt_O) + 1):  # 'OO' : 1+2 / 'O' : 1 / 'OOO' : 1+2+3
+            cnt += x        # 0 + 3 + 1 + 6 = 10
+    print(cnt)
