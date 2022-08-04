@@ -1,17 +1,12 @@
-# n=1, (n)+6, (n+6)+12, 18  24
-# 6씩 증가
+# n=1, (n)+6, (n+6)+12, 18  24   z 6의 배수로 증가.
+#    6     12     18     24      x
+#       6      6     6           
 
 a = int(input())
 x=6
-y=0
+y=1
 z=1
-list_z = [z,]
-while a >=z:
-    y += 1
-    x += y
-    z += x
-    list_z.append(z)
-    if list_z[y-1] == a:
-        print(len(list_z))
-    elif list_z[y-1] < a <= list_z[y]:
-        print(len(list_z))
+while a > z:
+    z += x * y  # 6의 배수로 증가
+    y += 1      # n 번 증가.
+print(y)
