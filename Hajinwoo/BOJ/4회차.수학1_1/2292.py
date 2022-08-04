@@ -3,10 +3,9 @@
 #       6      6     6           
 
 a = int(input())
-x=6
 y=1
 z=1
 while a > z:
-    z += x * y  # 6의 배수로 증가
+    z += 6 * y  # 6의 배수로 증가
     y += 1      # n 번 증가.
 print(y)
