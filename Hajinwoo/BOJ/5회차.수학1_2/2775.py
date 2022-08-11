@@ -6,5 +6,5 @@ for _ in range(T):
     k = int(input()) # k 층
     n = int(input()) # n 호
     arr = [] # k 층 리스트
-    for a in range(1, n+1):
-        arr.append(a)
+    for i in range(1, n+1):
+        arr.append(i)
