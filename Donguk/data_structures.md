@@ -6,8 +6,6 @@
 
 * 데이터 조직이 코드의 실행 속도에 미치는 영향이 크다.
 
-
-
 ## ▶ 배열 - 기초 자료 구조
 
 > 배열의 크기 = 배열에 데이터 원소가 얼마나 들어있는지 알려준다.
@@ -57,8 +55,6 @@
   - 삽입할 값이 이미 집합에 들어 있는지 결정해야 함 = **먼저 집합 내 검색이 우선**
     
     - 원소 N개에 대해 최대 2N+1 단계가 필요 = N단계 검색 + N개의 데이터 이동+ 삽입 1단계
-
-
 
 # 알고리즘의 중요성
 
@@ -117,8 +113,6 @@ def binary_search(target, data):
 
 * 모든 상황에 완벽하게 들어맞는 단 하나의 자료 구조나 알고리즘은 거의 없다.
 
-
-
 # 빅 오 표기법
 
 > 빅 오 표기법을 사용해 주어진 알고리즘의 효율성을 쉽게 분류
@@ -151,17 +145,15 @@ def binary_search(target, data):
 
 * **원소가 하나가 될 때까지 데이터를 계속해서 반으로 줄이는 만큼의 단계 수가 걸림**
 
-
-
 ✔ 빅 오 확인하기!
 
-```ruby
+```javascript
 funcion isLeapYear(year) {
     return (year % 100 == 0) ? (year % 400 === 0) : (year % 4 === 0);
 } 주어진 해가 윤년인지 알 수 있는 함수 = O(1)
 ```
 
-```ruby
+```javascript
 function arraySum(arra) {
     let sum = 0;
 
@@ -172,7 +164,7 @@ function arraySum(arra) {
 } 주어진 배열의 모든 수를 합하는 함수 = O(n)
 ```
 
-```ruby
+```javascript
 function chessboardSpace(numberOfGrains) {
     let chessboardSpace = 1;
     let placedGrains = 1;
@@ -185,7 +177,7 @@ function chessboardSpace(numberOfGrains) {
 } 복리를 의미하는 함수이며 매 칸마다 2배씩 증가 = O(log n)
 ```
 
-```ruby
+```javascript
 function selectAStrings(array) {
     let newArray = [];
 
@@ -198,10 +190,10 @@ function selectAStrings(array) {
 } 문자열 배열을 받아 'a' 로 시작하는 문자열만 포함시킨 새 배열을 반환 = O(n)
 ```
 
-```ruby
+```javascript
 function median(array) {
     const middle = Math.floor(array.length / 2);
-    
+
     if (array.leength % 2 === 0) {
         return (array[middle - 1] + array[middle]) / 2;
     } else {
