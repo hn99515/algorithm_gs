@@ -15,19 +15,11 @@
 * 이제 두 포인터를 다시 배열의 처음 두 값으로 옮겨서 위 4단계를 재실행 = 새로운 패스스루 실행
 
 ```python
-def bubble_sort(list):
-    unsorted_until_index = len(list) - 1        # 아직 정렬되지 않은 배열의 가장 마지막 index
-    sorted = False                              # 배열의 정렬 여부 기록    
-
-    while not sorted:
-        sorted = True                           # 배열이 정렬되어 있다고 가정    
-        for i in range(unsorted_until_index):
-            if list[i] > list[i+1]:
-                list[i], list[i+1] = list[i+1], list[i]
-                sorted = False                  # 어떤 교환도 하지 않고 전체 패스스루를 통과할 때 sorted True가 남아서 배열이 완전히 정렬됨을 알 수 있
-        unsorted_until_index -= 1               # 기존 index는 정렬 완료했기에 -1
-
-    return list
+def bubble_sort(a, N):
+    for i in range(N-1, 0, -1):
+        for j in range(0, i):
+            if a[j] > a[j+1]:
+                a[j], a[j+1] = a[j+1], a[j]
 ```
 
 ## ▶ 효율성 = O(N**2)
@@ -56,14 +48,16 @@ def greatestProduct(array):    # 모든 숫자쌍의 최대곱을 찾는 함수
 
 ```python
 def greatestNumber(array):    # 배열에서 가장 큰 하나를 찾는 함수
+    
+    maxV = array[0]
     for i in array:
         # i가 가장 크다고 가정
         isIValTheGreatest = True
 
-    for j in array:
+        for j in array:
         # i 보다 큰 값을 찾으면, i는 가장 큰 수가 아님
-        if j > i:
-            isIValTheGreatest = False
+            if j > i:
+                isIValTheGreatest = False
     # 나머지 수를 모두 확인한 후에도 i가 가장 크면, i가 가장 큰 수
     if isIValTheGreatest:
         return i
@@ -123,7 +117,7 @@ def Counting_Sort(A, B, K)
 
 * 배열의 각 셀을 확인하면서 주어진 값 중에서 최소값을 찾는다.
 
-* 최소값의 인덱스와 패스스루를 처음 시작했을 때의 값을 교환
+* **최소값의 인덱스와 패스스루를 처음 시작했을 때의 값을 교환**
 
 * 맨 처음 위치를 제외한 나머지 리스트를 대상으로 위의 과정을 반복
 
@@ -159,7 +153,7 @@ def print_numbers_version_two(upperLimit):
     while number <= upperLimit:
         print(number)
 
-        number += 1
+        number += 2
 ```
 
 ```python
