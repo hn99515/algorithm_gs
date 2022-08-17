@@ -7,7 +7,7 @@
 primenum = []
 for num in range(2, 246913):
     cnt = 0
-    for i in range(2, int(num**0.5)+1): # 제곱근까지만 확인
+    for i in range(2, (num // 2) +1): # 숫자의 절반까지만 소수 체크
         if num % i == 0:
             cnt += 1
             break
