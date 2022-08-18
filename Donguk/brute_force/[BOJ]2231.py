@@ -8,11 +8,19 @@
 자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성
 '''
 
-N = input()
-total_sum = 0
-pos_sum = 0
-for i in range(len(N)):
-    pos_sum += N[i]
+N = int(input())
 
-total_sum = N + pos_sum
-        
+res = 0
+# N의 가장 작은 생성자 찾기!
+for i in range(1, N+1):
+    # str 형태로 넣어야 배열 형태로 들어가고 형변환 후 sum 함수를 자릿수의 합으로 사용
+    po_sum = sum(map(int, str(i)))
+    # 분해합 구하기
+    res = i + po_sum
+
+    # 분해합이 N과 동일한 경우 = i가 N의 생성자
+    if res == N:
+        print(i)
+        break
+else:
+    print('0')
