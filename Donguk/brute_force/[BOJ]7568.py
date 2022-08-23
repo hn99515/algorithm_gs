@@ -15,10 +15,10 @@ for tc in range(N):
     arr.append((x, y))
 
 # brute-force    
-for i in arr:
+for i in arr:       # (55, 185)
     # 순위 초기화
     rank = 1
-    for j in arr:
+    for j in arr:   # (55, 185), (58, 183), (88, 186), (60, 175), (46, 155) 
         # 튜플 인덱싱 = x는 x끼리 y는 y끼리 비교 / 조건 만족하면 +1
         if i[0] < j[0] and i[1] < j[1]:
             rank += 1

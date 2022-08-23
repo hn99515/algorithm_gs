@@ -11,9 +11,31 @@ MN개의 단위 정사각형으로 나누어져 있는 M×N 크기의 보드를 
 '''
 
 N, M = map(int, input().split())
-board = [list(input())]
+board = [list(input()) for _ in range(N)]
+board_min = []
 
-for i in board:
-    cnt = 0
-    for j in board:
+# 8x8 배열로 찾기 이므로 N-8+1 = index error 회피!
+for i in range(N-7):
+    for j in range(M-7):
+        w_cnt = 0         # white 가 먼저 나오는 경우 (2가지 경우 나눠서 접근)
+        b_cnt = 0         # black 이 먼저 나오는 경우
+
+        # 8x8 배열로 찾기
+        for a in range(i, i+8):
+            for b in range(j, j+8):
+                if (a+b) % 2 == 0:          # 행과 열을 더한 값이 짝수인 경우 (2가지 경우 나눠서 접근)
+                    if board[a][b] != 'W':  # W가 안나오면 W로 바꿔야함
+                        w_cnt += 1
+                    else:                   # B가 안나오면 B로 바꿔야함
+                        b_cnt += 1
+                else:                       # 행과 열을 더한 값이 홀수인 경우
+                    if board[a][b] != 'B':
+                        w_cnt += 1
+                    else:
+                        b_cnt += 1
+
+        board_min.append(w_cnt)             # 각각의 최소 개수를 담자
+        board_min.append(b_cnt)
+
+print(min(board_min))                       # 둘 중에 더 작은 값을 출력
 

@@ -14,8 +14,8 @@ for i in range(len(card_numbers)):
         for k in range(j+1, len(card_numbers)):
             # 카드 3장의 합이 M 이하인 경우
             if card_numbers[i] + card_numbers[j] + card_numbers[k] <= M:
-                # 최대값 구하는 방법
-                if res < card_numbers[i] + card_numbers[j] + card_numbers[k]:
+                # 최대값 구하기
+                if card_numbers[i] + card_numbers[j] + card_numbers[k] > res:
                     res = card_numbers[i] + card_numbers[j] + card_numbers[k]
 
 print(res)
