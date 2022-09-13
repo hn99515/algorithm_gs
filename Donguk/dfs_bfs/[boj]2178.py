@@ -4,13 +4,14 @@
 한 칸에서 다른 칸으로 이동할 때, 서로 인접한 칸으로만 이동
 칸을 셀 때에는 시작 위치와 도착 위치도 포함
 '''
-def bfs(i, j, N):
+def bfs(i, j, N):       # i, j 출발위치
     visited = [[0] * M for _ in range(N)]
     q = []
     q.append((i, j))
     visited[i][j] = 1
     while q:
         i, j = q.pop(0)
+        # 미로가 1이면서 도착점에 도착한다면 방문 횟수 표시
         if maze[i][j] == 1:
             if i == N-1 and j == M-1:
                 return visited[i][j]
