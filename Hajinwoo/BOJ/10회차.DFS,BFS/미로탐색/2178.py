@@ -23,7 +23,7 @@ def bfs(x, y):
             # 0 즉, 벽인 경우 무시
             if arr[nx][ny] == 0:
                 continue
-            # 1인 경우에 이동하면서 카운트
+            # 1인 경우에 이동하면서 이동한 경로에 +1 카운트
             if arr[nx][ny] == 1:
                 arr[nx][ny] = arr[x][y] + 1
                 queue.append((nx, ny))
