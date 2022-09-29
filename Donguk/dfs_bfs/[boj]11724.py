@@ -27,7 +27,11 @@ cnt = 0
 # 정점을 dfs로 탐색하면서 개수 세기
 for i in range(1, N):
     if not visited[i]:
-        dfs(i)
-        cnt += 1
+        if not adjList[i]:
+            cnt += 1
+            visited[i] = 1
+        else:
+            dfs(i)
+            cnt += 1
 print(cnt)
 
