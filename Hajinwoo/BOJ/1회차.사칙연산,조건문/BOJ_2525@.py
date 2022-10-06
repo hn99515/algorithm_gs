@@ -1,5 +1,5 @@
-a,b = map(int, input().split(' '))
-c = int(input())
+a,b = 55, 75
+c = 60
 
 a += c // 60
 b += c % 60
