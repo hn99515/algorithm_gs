@@ -7,15 +7,29 @@
 import sys
 sys.stdin = open('s_input.txt')
 
+
+def check(num):
+    number = str(num)
+    for k in range(len(number) - 1):
+        if number[k] > number[k+1]:
+            return False
+    return True
+
+
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     arr = list(map(int, input().split()))
 
-    res = []
+    maxV = 0
     for i in range(N-1):
         for j in range(i+1, N):
-            res.append(arr[i] * arr[j])
+            number = (arr[i] * arr[j])
 
-    for k in range(len(res)):
-        if res[k] % 10
+            if check(number):
+                maxV = max(number, maxV)
+
+    if maxV == 0:
+        maxV = -1
+
+    print(f'#{tc} {maxV}')
