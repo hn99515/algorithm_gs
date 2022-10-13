@@ -16,9 +16,11 @@ def dfs(v):
                 break
         # 정점이 갈 곳 없을 때
         else:
-            if len(stack) != 0:
-
-
+            if len(stack) != 0:     # 인접 정점을 모두 돌아도 stack이 남아있다면
+                v = stack.pop()     # 다음 방문할 곳 pop
+            else:
+                break
+    return res
 
 
 T = int(input())
@@ -36,3 +38,8 @@ for tc in range(1, T+1):
     visited = [0] * N
     stack = []
 
+    res = dfs(s)
+    if g in res:
+        print(f'#{tc} 1')
+    else:
+        print(f'#{tc} 0')
