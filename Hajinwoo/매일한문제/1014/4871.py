@@ -9,5 +9,4 @@ for tc in range(1, T+1):
     adj = [[] for _ in range(V+1)]
     for i in range(E):
         adj[arr[i][0]].append(arr[i][1])
-        adj[arr[i][1]].append(arr[i][0])
     print(adj)
