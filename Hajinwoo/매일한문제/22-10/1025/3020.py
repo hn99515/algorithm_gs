@@ -14,4 +14,3 @@ for i in range(N):
 for i in range(H - 1, 0, -1):
     stalagmite[i] += stalagmite[i + 1]
     stalactite[i] += stalactite[i + 1]
-
