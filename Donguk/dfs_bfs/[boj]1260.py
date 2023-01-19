@@ -4,27 +4,29 @@
 더 이상 방문할 수 있는 정점이 없는 경우 종료
 정점 번호는 1번부터 N번까지
 '''
+from collections import deque
+
 def dfs(V):         # V - 시작 정점
         print(V, end=' ')
-        visited[V] = 1
+        visited[V] = True
         for w in adjList[V]:
             # 방문하지 않은 w
-            if visited[w] == 0:
+            if visited[w] == False:
                 dfs(w)
 
 
 def bfs(V):                 # V - 시작 정점
-    visited = [0] * (N+1)   # visited 생성
-    q = []                  # 큐 생성
+    visited = [False] * (N+1)   # visited 생성
+    q = deque()                  # 큐 생성
     q.append(V)             # 시작점 인큐
-    visited[V] = 1          # 시작점 처리 표시
+    visited[V] = True          # 시작점 처리 표시
     while q:                        # 큐가 비어있으면 종료
-        V = q.pop(0)
+        V = q.popleft()
         print(V, end=' ')                    # visit(v) - 문제에서 주어진 일을 처리
         for w in adjList[V]:        # 인접하고 미방문한 정점 w가 있는 경우 q에 추가
-            if visited[w] == 0:
+            if visited[w] == False:
                 q.append(w)
-                visited[w] = visited[V] + 1
+                visited[w] = True
 
 
 N, M, V = map(int, input().split())     # N = 정점의 개수, M = 간선의 개수, V = 탐색 시작 번호
@@ -35,11 +37,13 @@ for _ in range(M):
     adjList[a].append(b)
     adjList[b].append(a)
 
-# 인접 리스트 정렬해야만 오름차순으로 출력 가능
+# 인접 노드를 정렬해야만 오름차순으로 출력 가능
 for adj in adjList:
     adj.sort()
 
-visited = [0] * (N+1)       # 방문 리스트 생성
+print(adjList)
+
+visited = [False] * (N+1)       # 방문 리스트 생성
 dfs(V)
 print()
 bfs(V)
